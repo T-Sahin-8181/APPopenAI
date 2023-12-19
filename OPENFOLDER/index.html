@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0"
+	/>
     <title>TaPo Kitchen</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -10,11 +14,15 @@
     <h1>Deine Zutaten unser gericht..</h1>
     <main>
         <form>
-            <textarea></textarea>
-            <button type="submit">Submit</button>
+            <textarea 
+                name="text"
+                required
+                placeholder="Your message"
+            ></textarea>
+            <button type="submit">Senden</button>
         </form>
-        <div id="output">Answer from AI</div>
+        <div id="output">Antwort...</div>
     </main>
-    <script> src="client.js"</script>
+    <script> src="source.js"</script>
 </body>
 </html>
