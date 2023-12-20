@@ -17,7 +17,7 @@ formElement.addEventListener("submit", async (e) => {
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({ message: textArea.value }),
 	});
-
+    
 	// convert the response to json
 	const data = await response.json();
 
