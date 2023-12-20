@@ -15,26 +15,16 @@ dotenv.config();
  
 // setup Open AI
 
-import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
+
+
+  // setup Open AI
+  import  Configuration from 'openai';
+  import  OpenAIApi  from 'openai';
+const configuration = new Configuration({
+	apiKey: process.env['OPENAI_API_KEY'], // This is the default and can be omitted
 });
-
-async function main() {
-  const chatCompletion = await openai.chat.completions.create({
-    messages: [{ role: 'user', content: 'Say this is a test' }],
-    model: 'gpt-3.5-turbo',
-  });
-}
-
-
-main();
-
-
-
-
-
+const openai = new OpenAIApi(configuration);
 // handle POST request
 app.post("/completion", async (req, res) => {
 	if (!req.body.message) {
