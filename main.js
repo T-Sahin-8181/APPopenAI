@@ -1,4 +1,5 @@
-import  express, { response }  from "express";
+import  express from "express";
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -42,7 +43,7 @@ app.post("/completion", async (req, res) => {
 			max_tokens: 2048,
 		});
 
-		const answer = response.data?.choices[0]?.text;
+		const answer = response.data.choices[0]?.text;
 
 		console.log("answer:", answer, "\n");
 
@@ -58,5 +59,5 @@ app.post("/completion", async (req, res) => {
 		return res
 			.status(500)
 			.send({ error: "Error: Could not process your query" });
-	}
+		}
 });
